@@ -31,6 +31,30 @@ This prototype demonstrates how established DevOps patterns—Infrastructure as 
 - **App:** Flask/Python
 - **CI/CD:** GitHub Actions  
 
+---
+## Cloud Organizational Models & DevOps Implications
+
+| Layer / Concept             | Azure                                    | AWS                                   | GCP                                  |
+|-----------------------------|------------------------------------------|---------------------------------------|--------------------------------------|
+| **Root**                    | Azure AD Tenant                          | AWS Organization                      | Google Cloud Organization            |
+| **Policy Scope**            | Management Groups (nestable)             | Organizational Units (up to 5 levels) | Folders (any depth)                  |
+| **Billing & Boundaries**    | Subscriptions                            | Accounts                              | Projects                             |
+| **Resource Containers**     | Resource Groups                          | (Use Tags for grouping)               | (Use Labels for grouping)            |
+| **Policy Engine**           | Azure Policy                             | Service Control Policies (SCP)        | Organization Policy                  |
+
+### Why It Matters for DevOps
+
+- **Governance & Compliance**  
+  Policy inheritance in Azure (MGs) and GCP (Folders) allows centralized rule enforcement; AWS OU depth is limited to 5 levels.
+- **Environment Isolation & Billing**  
+  Choosing Subscriptions (Azure) vs. Accounts (AWS) vs. Projects (GCP) shapes your Dev/Staging/Prod boundaries, quota management and cost reporting.
+- **Resource Lifecycle & Access**  
+  Azure Resource Groups simplify RBAC and cleanup; AWS/GCP rely on Tags/Labels, so your Terraform modules and CI/CD must propagate consistent metadata.
+- **IAM Scoping**  
+  Azure applies RBAC at RG level, AWS at Account or resource level, GCP at Project/Folder/Org level — plan your service accounts and roles accordingly.
+
+---
+
 ## Getting Started
 
 1. **Clone the repo**  

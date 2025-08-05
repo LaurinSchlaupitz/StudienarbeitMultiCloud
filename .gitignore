@@ -1,0 +1,5 @@
+# alle Dateien/Ordner, die mit “.terraform” beginnen
+.terraform*
+
+# den Ordner terraform/state komplett ignorieren
+terraform/state/
