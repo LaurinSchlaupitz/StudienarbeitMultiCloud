@@ -1,6 +1,6 @@
 # DevOps Multi-Cloud Prototype
 
-A hands-on exploration of DevOps strategies for provisioning and operating applications across multiple public clouds in a cloud-agnostic way.
+A hands-on exploration of DevOps practics for provisioning and operating applications across multiple public clouds in a cloud-agnostic way.
 
 ## Motivation
 
